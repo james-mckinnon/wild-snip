@@ -5,6 +5,8 @@ class Snippets_Controller extends Base_Controller {
 	public $restful = true;
 
 	public function post_create(){
+		$validation_errors = Snippet::validate(Input::get());
+
 		$new_snippet = Snippet::create(array('snippet' => Input::get('snippet')));
 
 		if($new_snippet){
