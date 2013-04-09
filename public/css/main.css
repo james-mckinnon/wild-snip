@@ -15,9 +15,7 @@ textarea {
 	border: none;
 	outline: 0;
 	background: black;
-
-	-webkit-box-shadow: none !important;
-	box-shadow: none !important;
+	color: #666;
 }
 nav {
 	position: absolute;
