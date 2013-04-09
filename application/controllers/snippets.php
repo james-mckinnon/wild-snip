@@ -20,6 +20,9 @@ class Snippets_Controller extends Base_Controller {
 
 	public function get_show($id){
 		$snippet = Snippet::find($id);
+
+		if(!snippet) return Redirect::to_route('new_snippet');
+		
 		return View::make('snippet.show', $snippet->to_array());
 	}
 
