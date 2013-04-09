@@ -7,6 +7,10 @@ class Snippets_Controller extends Base_Controller {
 	public function post_create(){
 		$validation_errors = Snippet::validate(Input::get());
 
+		if($validation_errors){
+			return Redirect::to_route('new_snippet');
+		}
+
 		$new_snippet = Snippet::create(array('snippet' => Input::get('snippet')));
 
 		if($new_snippet){
